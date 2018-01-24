@@ -8,19 +8,18 @@ sass:
     style: :compressed
 
 # Gems
-gems:
+plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
 
 # Custom Variables
-analytics: 100929437
 author:
-  email: "&#109;&#97;&#98;&#101;&#114;&#103;&#101;&#114;&#54;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
-  github: "mark-berger"
-  linkedin: "maberger"
-  name: "Mark Berger"
-  uri: "http://maberger.com"
-description: "Personal website of Mark Berger, BASc Computer Engineering."
-title: "Mark Berger"
-url: "http://maberger.com"
+  email: "&#x57;&#x65;&#x6E;&#x78;&#x75;&#x61;&#x6E;&#x2E;&#x47;&#x75;&#x6F;&#x40;&#x6D;&#x79;&#x2E;&#x63;&#x69;&#x74;&#x79;&#x75;&#x2E;&#x65;&#x64;&#x75;&#x2E;&#x68;&#x6B;"
+  github: "magwx"
+  name: "&#x57;&#x65;&#x6E;&#x78;&#x75;&#x61;&#x6E;&#x20;&#x47;&#x75;&#x6F;"
+  uri: "https://magwx.github.io"
+description: "Personal website of GWX."
+title: "&#x44;&#x72;&#x2E;&#x20;&#x57;&#x65;&#x6E;&#x78;&#x75;&#x61;&#x6E;&#x20;&#x47;&#x75;&#x6F;"
+sidetitle: ["&#x57;&#x65;&#x6E;&#x78;&#x75;&#x61;&#x6E;", "&#x47;&#x75;&#x6F;"]
+url: "https://magwx.github.io"
