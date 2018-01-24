@@ -9,10 +9,12 @@
       {% include nav.html %}
     </div>
     <div class="sidebar-item">
-      <div class="sidebar-title">
-        <p>
-          {{ site.title }}
-        </p>
+      <div class="sidebar-title" style="font-family: 'Great Vibes', cursive;">
+        {% for title in site.sidetitle %}
+          <p>
+            {{ title }}
+          </p>
+        {% endfor %}
       </div>
     </div>
   </div>
