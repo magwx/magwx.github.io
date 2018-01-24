@@ -1,0 +1,217 @@
+{% assign resume = site.data.resume %}
+<div class="resume">
+  <header>{% assign b = resume.basics %}
+    <div class="item">
+      <div>
+        <h1 align="left">{{ b.name }}</h1>
+        <div class="left left-header">
+          <h2 class="title">{{ b.department }}<br \>{{ b.university }}</h2>
+        </div>
+        <div class="right right-header">
+          <section class="resume-contact">
+            <div class="email">
+              <span class="contact-label">Email:</span>
+              <a href="mailto:{{ site.author.email }}">
+                {{ b.email }}
+                <div class="mini-icon">
+                  {% include svg-icon.html icon=site.data.icons.email %}
+                </div>
+              </a>
+            </div>
+            <div class="website">
+              <span class="contact-label">Website:</span>
+              <a href="{{ b.website }}">
+                {{ b.website }}
+                <div class="mini-icon">
+                  {% include svg-icon.html icon=site.data.icons.web %}
+                </div>
+              </a>
+            </div>
+<!--        {% for p in b.profiles %}
+            <div class="network">
+              <a href="{{ p.url }}">
+                <span class="contact-label">{{ p.network }}:</span>
+                {{ p.username }}
+                <div class="mini-icon">
+                {% case p.network %}
+                {% when 'GitHub' %}
+                {% include svg-icon.html icon=site.data.icons.github %}
+                {% when 'LinkedIn' %}
+                {% include svg-icon.html icon=site.data.icons.linkedin %}
+                {% endcase %}
+                </div>
+              </a>
+            </div>
+            {% endfor %} -->
+            <div class="location">
+              <span class="contact-label">Location:</span>
+              {{ b.location.city }}, {{ b.location.countryCode }}
+              <div class="mini-icon">
+                {% include svg-icon.html icon=site.data.icons.location %}
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </header>
+<!--   <section class="summary">
+    <h2>Short Bio</h2>
+    {% capture bio_content %}
+    {% include bio.md %}
+    {% endcapture %}
+    {{ bio_content | markdownify }}
+  </section> -->
+  <section class="research">
+    <h2>Research Interests</h2>
+    <ul>
+      {% for ri in resume.research %}
+      <li> {{ri}} </li>
+      {% endfor %}
+    </ul>  
+  </section>
+  <section class="education">
+    <h2>Education</h2>
+    {% for e in resume.education %}
+    <div class="item">
+      <div class="left">
+        <div class="institution">
+          <strong>
+            {{ e.institution }}
+          </strong>
+        </div>
+        <div class="degree" style="padding-left:15px">
+          {{ e.degree }}
+        </div>
+        <div class="topic" style="padding-left:15px;font-style:italic">
+          {{ e.topic }}
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-detail">
+          {{ e.area }}
+        </div>
+        <div class="date">
+          <span class="startDate">
+            {{ e.startDate | date: "%b %Y" }}
+          </span>
+          {% if e.endDate %}
+          <span class="endDate">
+            - {{ e.endDate | date: "%b %Y" }}
+          </span>
+          {% else %}
+          <span class="endDate">
+            - Present
+          </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  <section class="experience">
+    <h2>Research Experience</h2>
+    {% for w in resume.work %}
+    <div class="item">
+      <div class="left">
+        <div class="department">
+          <strong>
+            {{ w.department }},
+          </strong>
+        </div>
+        <div class="institution" style="padding-left:30px">
+          <strong>
+            {{ w.institution }}
+          </strong>
+        </div>
+        <div class="topics" style="font-style:italic">
+          <ul>
+          {% for t in w.topics %}
+            <li>{{ t }}</li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-detail">
+          {{ w.location }}
+        </div>
+        <div class="date">
+          <span class="startDate">
+            {{ w.startDate | date: "%b %Y" }}
+          </span>
+          {% if w.endDate %}
+          <span class="endDate">
+            - {{ w.endDate | date: "%b %Y" }}
+          </span>
+          {% else %}
+          <span class="endDate">
+            - Present
+          </span>
+          {% endif %}
+        </div>
+        <div class="position" style="font-style:italic">
+          {{ w.position }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+<!--   <section class="awards">
+    <h2>Awards, Scholarships, &amp; Achievements</h2>
+    {% for a in resume.awards %}
+    <div class="item">
+      <div class="left">
+        <div class="title">
+          <strong>
+            {{ a.title }}
+          </strong>
+        </div>
+        <div class="award-summary">
+          {{ a.summary }}
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-detail">
+          {{ a.awarder }}
+        </div>
+        <div class="date">
+          {{ a.date | date: "%b %Y" }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </section> -->
+  <section class="publications">
+    <h2>Publications</h2>
+    <ul>
+    {% for p in resume.publications %}
+      {% if p.journal %}
+        {% capture detail %}
+        <br /> <i><b>{{ p.journal }}</b></i> {{ p.volume }}, {{ p.pages }} ({{ p.year }})
+        {% endcapture %}
+      {% else %}
+        {% capture detail %}
+        (In revision.)
+        {% endcapture %}
+      {% endif %}
+      <li>{{ p.author }} "{{ p.title }}" {{ detail }}</li>   
+    {% endfor %}
+    </ul>
+  </section>
+  <section class="programming">
+    <h2>Programming Languages</h2>
+    {% for l in resume.programs %}
+    <div class="item">
+      <div class="left">
+        {{ l.level }}:
+      </div>
+      <div class="right">
+        <strong>
+          {{ l.languages | join: ", "}}
+        </strong>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+</div>
