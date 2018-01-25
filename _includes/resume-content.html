@@ -12,13 +12,13 @@
             <div class="email">
               <span class="contact-label">Email:</span>
               <a href="mailto:{{ site.author.email }}">
-                {{ b.email }}
+                <em>{{ b.email }}</em>
                 <div class="mini-icon">
                   {% include svg-icon.html icon=site.data.icons.email %}
                 </div>
               </a>
             </div>
-            <div class="website">
+            <!-- <div class="website">
               <span class="contact-label">Website:</span>
               <a href="{{ b.website }}">
                 {{ b.website }}
@@ -26,7 +26,7 @@
                   {% include svg-icon.html icon=site.data.icons.web %}
                 </div>
               </a>
-            </div>
+            </div> -->
 <!--        {% for p in b.profiles %}
             <div class="network">
               <a href="{{ p.url }}">
@@ -43,9 +43,16 @@
               </a>
             </div>
             {% endfor %} -->
+            <div class="phone">
+              <span class="contact-label">Tel:</span>
+              Tel: <em>{{ b.tel }}</em>
+              <div class="mini-icon">
+                {% include svg-icon.html icon=site.data.icons.phone %}
+              </div>
+            </div>
             <div class="location">
-              <span class="contact-label">Location:</span>
-              {{ b.location.city }}, {{ b.location.countryCode }}
+              <span class="contact-label">Office:</span>
+              Office: <em>{{ b.office }}</em>
               <div class="mini-icon">
                 {% include svg-icon.html icon=site.data.icons.location %}
               </div>
@@ -199,7 +206,7 @@
     {% endfor %}
     </ul>
   </section>
-  <section class="programming">
+<!--   <section class="programming">
     <h2>Programming Languages</h2>
     {% for l in resume.programs %}
     <div class="item">
@@ -213,5 +220,5 @@
       </div>
     </div>
     {% endfor %}
-  </section>
+  </section> -->
 </div>
