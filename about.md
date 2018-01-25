@@ -11,6 +11,8 @@ I'm a Computer geek who started from Mechanics but happened to obtain a Mathemat
 I built this website using [Jekyll](http://jekyllrb.com/ "Jekyll") and it's currently hosted on [GitHub Pages](https://pages.github.com/ "GitHub Pages"). It doubles as my [resume]({{ site.baseurl }}/resume "GWX's Resume") and, maybe in the future, a place to post notes, code fragments, random thoughts and anything interesting.
 
 Please feel free to <a href="mailto:{{ site.author.email }}">email</a> me if you have any questions or comments.
+  
+<br /><br />
+<p style="color:#f6f6f6">Stop digging!</p>
+[](/deeper)
 
-
-<!-- — {{ site.author.name }} -->
